@@ -3,7 +3,7 @@
 @push('css')
     <style>
         .fondo {
-            background: #302886;
+            background: #FFD700;
         }
  
         .img-responsive{
@@ -14,15 +14,15 @@
 @endpush
  
 @section('titulo')
-    Bienvenido a la página de EC
+    Empieza tu vida Sostenible
 @endsection
  
  
 @section('subtitulo')
-    Explorando las oportunidades con Laravel 12
+    Aprovecha el sol de Yucatán con SunGo
 @endsection
  
-@section('link1','Active')
+@section('link1','Servicios')
 @section('titulo1')
     <h1>About Me</h1>
 @endsection
