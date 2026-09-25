@@ -8,85 +8,153 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>SunGo | Contacto</title>
+    <style>
+        body {
+            background: #f3f3f3;
+            font-family: 'Segoe UI', sans-serif;
+            color: #0f172a;
+        }
+
+        .max-w-4xl {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            color: #0f172a;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #0f172a;
+            font-weight: 700;
+        }
+
+        a {
+            color: #0b5d7a;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .alert {
+            background: #dff7fb;
+            color: #0a3b4a;
+            border: 1px solid #bfeaf2;
+            border-radius: 12px;
+            margin: 24px 0;
+        }
+
+        .alert .alert-heading {
+            color: #0a3b4a;
+            font-weight: 700;
+        }
+
+        .row {
+            margin-top: 20px;
+        }
+
+        .col-sm-3 {
+            margin-bottom: 20px;
+        }
+
+        .card {
+            border: 1px solid #dbeaf0;
+            border-radius: 14px;
+            background: #ffffff;
+            box-shadow: 0 10px 20px rgba(15, 23, 42, 0.04);
+        }
+
+        .card-title {
+            color: #0f172a;
+            font-weight: 700;
+        }
+
+        .card-body {
+            color: #334155;
+        }
+
+        .btn {
+            background: #1eb8c7;
+            border: none;
+            color: #fff;
+            font-weight: 600;
+        }
+    </style>
 </head>
 <body>
     <div class="max-w-4xl mx-auto px-4">    
         <h1>Página de Contacto</h1>
-        <!-- El uso de blade nos permite poder hacer uso de algunas directivas como a continuación podemos apreciar en la siguiente línea de código -->
         <h2>{{$nombre}}</h2>
         <h2>{{$Especialidad}}</h2>
         <a href="{{route('vista_inicio')}}">Ir a la vista de inicio</a><br>
         <a href="{{route('contact')}}">Ir a la vista de contacto</a>
-       
-       
+
         <x-alert type='danger'>
             <x-slot name="title">
-                Esto es un  mensaje de alerta obtenido desde la vista de contacto
+                Solicita tu cotización sin compromiso
             </x-slot>
-            Contenido del alert
+            Te asesoramos para instalar paneles solares en tu hogar o negocio.
         </x-alert>
- 
- 
- 
+
         <div class="row">
             <div class="col-sm-3">
                <x-card>
                     <x-slot name="title">
-                        Producto #1
+                        Instalación residencial
                     </x-slot>
                     <x-slot name="texto_tarjeta">
-                        El contenido de la tarjeta va aquí
-                        Texto de prueba
+                        Soluciones de paneles solares para reducir tu recibo de luz y generar ahorro real.
                     </x-slot>
                      <x-slot name="texto_boton">
-                        boton1
+                        Cotizar
                     </x-slot>
                </x-card>
             </div>
- 
+
             <div class="col-sm-3">
                <x-card>
                     <x-slot name="title">
-                       Producto #2
+                       Paneles comerciales
                     </x-slot>
                     <x-slot name="texto_tarjeta">
-                        El contenido de la tarjeta va aquí
+                        Sistemas eficientes para negocios que buscan sostenibilidad y optimización de costos.
                     </x-slot>
                     <x-slot name="texto_boton">
-                        boton2
+                        Saber más
                     </x-slot>
                </x-card>
             </div>
- 
+
             <div class="col-sm-3">
                <x-card>
                     <x-slot name="title">
-                       Producto #3
+                       Mantenimiento
                     </x-slot>
                     <x-slot name="texto_tarjeta">
-                        El contenido de la tarjeta va aquí
+                        Revisamos y cuidamos tu sistema para que siempre funcione con máxima eficiencia.
                     </x-slot>
                     <x-slot name="texto_boton">
-                        boton3
+                        Agendar
                     </x-slot>
                </x-card>
             </div>
- 
+
             <div class="col-sm-3">
                <x-card>
                     <x-slot name="title">
-                       Producto #4
+                       Asesoría solar
                     </x-slot>
                     <x-slot name="texto_tarjeta">
-                        El contenido de la tarjeta va aquí
+                        Te guiamos desde el diseño hasta la instalación para elegir la mejor solución.
                     </x-slot>
                     <x-slot name="texto_boton">
-                        boton4
+                        Consultar
                     </x-slot>
                </x-card>
             </div>
- 
         </div>
     </div>
 </body>

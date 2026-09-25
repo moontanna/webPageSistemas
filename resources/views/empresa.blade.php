@@ -1,9 +1,10 @@
 @extends('layouts.app')
 @section('titulopagina','Empresa E-Commerce')
+@section('formato_inicial', 'empresa')
 @push('css')
     <style>
         .fondo {
-            background: #FFD700;
+            background: #1b7ec9;
         }
  
         .img-responsive{
@@ -30,7 +31,7 @@
     {{$descripcion_about}}
 @endsection
 @section("Autor")
-    {{$nombre}}
+    SunGo
 @endsection
 @section("actividad",$actividad)
 @section("texto_ejemplo")

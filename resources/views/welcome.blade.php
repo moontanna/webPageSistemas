@@ -1,29 +1,34 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'Mi App')</title>
-</head>
-<body>
+@extends('layouts.app')
 
-    <header>
-        <nav>
-            <a href="/">Sun Go</a>
-            <a href="/">Productos</a>
-        </nav>
-    </header>
+@section('titulopagina', 'SunGo | Energía solar')
 
-    <main>
-        @yield('content')
-    </main>
+@section('titulo')
+    Energia limpia para tu hogar
+@endsection
 
-    <footer>
-        <p>&copy; Aprovecha el sol de Yucatán con SunGo</p>
-        <p>Mérida, Yucatán.</p>
-        <p>WhatsApp: (999) 123-4567.</p>
-        <p>Correo: contacto@sungo.mx.</p>
-    </footer>
+@section('subtitulo')
+    Transformamos el sol en ahorro real para familias y negocios en Yucatán
+@endsection
 
-</body>
-</html>   
+@section('titulo1','Sobre nosotros')
+
+@section('descripcion_about')
+    SunGo diseña, instala y mantiene soluciones de energia solar para reducir tu factura electrica y darte mayor independencia energetica con tecnologia de alto rendimiento.
+@endsection
+
+@section('texto_ejemplo')
+    Ahorro real · Instalación profesional · Energía sostenible
+@endsection
+
+@section('contenido_listado')
+    <h2>¿Por qué elegir SunGo?</h2>
+    <ul>
+        <li>Asesoría personalizada para tu proyecto.</li>
+        <li>Paneles solares de alta eficiencia.</li>
+        <li>Instalación segura y con garantía.</li>
+        <li>Mantenimiento y soporte continuo.</li>
+    </ul>
+@endsection
+
+@section('Autor', 'SunGo')
+@section('actividad', 'Energía Solar')
