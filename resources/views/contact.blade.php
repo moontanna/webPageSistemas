@@ -1,161 +1,280 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SunGo | Contacto</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg: #f3f3f3;
+            --panel: #f9f9f9;
+            --text: #111111;
+            --muted: #6f757d;
+            --line: #d7d7d7;
+            --green: #3d9b5d;
+            --green-dark: #2a7d48;
+            --teal: #0ea5b3;
+        }
+
+        * { box-sizing: border-box; }
+
+        html, body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        a { text-decoration: none; }
+
         body {
-            background: #f3f3f3;
-            font-family: 'Segoe UI', sans-serif;
-            color: #0f172a;
+            min-height: 100vh;
         }
 
-        .max-w-4xl {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 0 20px;
+        .topbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(6px);
+            border-bottom: 1px solid rgba(0,0,0,0.02);
+            z-index: 10;
         }
 
-        h1 {
-            color: #0f172a;
+        .topbar-inner {
+            max-width: 1220px;
+            margin: 0 auto;
+            padding: 18px 26px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand {
+            font-size: 1.1rem;
             font-weight: 800;
-            margin-bottom: 20px;
+            letter-spacing: -0.05em;
+            color: #111;
         }
 
-        h2 {
-            color: #0f172a;
-            font-weight: 700;
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            font-size: 0.95rem;
+            font-weight: 500;
         }
 
-        a {
-            color: #0b5d7a;
-            text-decoration: none;
+        .nav a {
+            color: #1f1f1f;
+        }
+
+        .nav-button {
+            padding: 0.9rem 1.4rem;
+            border-radius: 10px;
+            background: #1d9db1;
+            color: #fff !important;
             font-weight: 600;
+            box-shadow: 0 10px 20px rgba(10, 151, 170, 0.18);
         }
 
-        .alert {
-            background: #dff7fb;
-            color: #0a3b4a;
-            border: 1px solid #bfeaf2;
-            border-radius: 12px;
-            margin: 24px 0;
+        .page {
+            max-width: 1220px;
+            margin: 0 auto;
+            padding: 104px 20px 60px;
         }
 
-        .alert .alert-heading {
-            color: #0a3b4a;
-            font-weight: 700;
+        .contact-wrap {
+            display: grid;
+            grid-template-columns: 1.08fr 0.92fr;
+            gap: 56px;
+            align-items: start;
         }
 
-        .row {
-            margin-top: 20px;
+        .contact-left {
+            padding-top: 8px;
         }
 
-        .col-sm-3 {
-            margin-bottom: 20px;
+        .contact-title {
+            font-size: clamp(2.3rem, 3vw, 3.6rem);
+            line-height: 1.1;
+            letter-spacing: -0.06em;
+            margin: 0 0 28px;
+            font-weight: 800;
         }
 
-        .card {
-            border: 1px solid #dbeaf0;
-            border-radius: 14px;
-            background: #ffffff;
-            box-shadow: 0 10px 20px rgba(15, 23, 42, 0.04);
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px 22px;
         }
 
-        .card-title {
-            color: #0f172a;
-            font-weight: 700;
+        .field {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #1a1a1a;
         }
 
-        .card-body {
-            color: #334155;
+        .field.full {
+            grid-column: 1 / -1;
         }
 
-        .btn {
-            background: #1eb8c7;
+        .field input,
+        .field select,
+        .field textarea {
+            width: 100%;
+            background: rgba(255,255,255,0.65);
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            padding: 0.9rem 0.95rem;
+            font-size: 1rem;
+            color: #1a1a1a;
+            outline: none;
+            box-shadow: inset 0 0 0 0 rgba(0,0,0,0);
+        }
+
+        .field textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .field input::placeholder,
+        .field textarea::placeholder {
+            color: #7d7d7d;
+        }
+
+        .btn-submit {
+            width: 100%;
+            margin-top: 18px;
+            padding: 1rem 1.5rem;
             border: none;
-            color: #fff;
-            font-weight: 600;
+            border-radius: 10px;
+            background: linear-gradient(180deg, var(--green) 0%, var(--green-dark) 100%);
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            box-shadow: 0 12px 20px rgba(60, 134, 79, 0.25);
+        }
+
+        .image-panel {
+            width: 100%;
+            height: 100%;
+            min-height: 520px;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 18px 36px rgba(15, 23, 42, 0.1);
+            background: #dfeaf8;
+        }
+
+        .image-panel img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        @media (max-width: 900px) {
+            .contact-wrap {
+                grid-template-columns: 1fr;
+            }
+
+            .image-panel {
+                min-height: 360px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .nav {
+                display: none;
+            }
+
+            .topbar-inner {
+                padding: 16px 18px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .page {
+                padding-top: 90px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="max-w-4xl mx-auto px-4">    
-        <h1>Página de Contacto</h1>
-        <h2>{{$nombre}}</h2>
-        <h2>{{$Especialidad}}</h2>
-        <a href="{{route('vista_inicio')}}">Ir a la vista de inicio</a><br>
-        <a href="{{route('contact')}}">Ir a la vista de contacto</a>
-
-        <x-alert type='danger'>
-            <x-slot name="title">
-                Solicita tu cotización sin compromiso
-            </x-slot>
-            Te asesoramos para instalar paneles solares en tu hogar o negocio.
-        </x-alert>
-
-        <div class="row">
-            <div class="col-sm-3">
-               <x-card>
-                    <x-slot name="title">
-                        Instalación residencial
-                    </x-slot>
-                    <x-slot name="texto_tarjeta">
-                        Soluciones de paneles solares para reducir tu recibo de luz y generar ahorro real.
-                    </x-slot>
-                     <x-slot name="texto_boton">
-                        Cotizar
-                    </x-slot>
-               </x-card>
-            </div>
-
-            <div class="col-sm-3">
-               <x-card>
-                    <x-slot name="title">
-                       Paneles comerciales
-                    </x-slot>
-                    <x-slot name="texto_tarjeta">
-                        Sistemas eficientes para negocios que buscan sostenibilidad y optimización de costos.
-                    </x-slot>
-                    <x-slot name="texto_boton">
-                        Saber más
-                    </x-slot>
-               </x-card>
-            </div>
-
-            <div class="col-sm-3">
-               <x-card>
-                    <x-slot name="title">
-                       Mantenimiento
-                    </x-slot>
-                    <x-slot name="texto_tarjeta">
-                        Revisamos y cuidamos tu sistema para que siempre funcione con máxima eficiencia.
-                    </x-slot>
-                    <x-slot name="texto_boton">
-                        Agendar
-                    </x-slot>
-               </x-card>
-            </div>
-
-            <div class="col-sm-3">
-               <x-card>
-                    <x-slot name="title">
-                       Asesoría solar
-                    </x-slot>
-                    <x-slot name="texto_tarjeta">
-                        Te guiamos desde el diseño hasta la instalación para elegir la mejor solución.
-                    </x-slot>
-                    <x-slot name="texto_boton">
-                        Consultar
-                    </x-slot>
-               </x-card>
-            </div>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <div class="brand">SunGO</div>
+            <nav class="nav" aria-label="Navegación principal">
+                <a href="{{ route('vista_inicio') }}">Inicio</a>
+                <a href="{{ route('vista_inicio') }}#services">Servicios</a>
+                <a href="{{ route('vista_inicio') }}#about">Nosotros</a>
+                <a href="{{ route('contact') }}" class="nav-button">Contáctanos</a>
+            </nav>
         </div>
-    </div>
+    </header>
+
+    <main class="page">
+        <section class="contact-wrap">
+            <div class="contact-left">
+                <h1 class="contact-title">Solicita tu cotización</h1>
+
+                <form>
+                    <div class="form-grid">
+                        <label class="field">
+                            <span>Nombre(s)</span>
+                            <input type="text" placeholder="Ej. Ana">
+                        </label>
+
+                        <label class="field">
+                            <span>Apellidos</span>
+                            <input type="text" placeholder="Ej. Herrera Morales">
+                        </label>
+
+                        <label class="field full">
+                            <span>Correo electrónico</span>
+                            <input type="email" placeholder="Ej. correoelectrónico@dominio.com">
+                        </label>
+
+                        <label class="field full">
+                            <span>Teléfono</span>
+                            <input type="tel" placeholder="Ej. 9993334645">
+                        </label>
+
+                        <label class="field full">
+                            <span>Tipo de inmueble</span>
+                            <select>
+                                <option selected>Tipo de inmueble</option>
+                                <option>Casa</option>
+                                <option>Departamento</option>
+                                <option>Negocio</option>
+                                <option>Industrial</option>
+                            </select>
+                        </label>
+
+                        <label class="field full">
+                            <span>Cuéntanos qué necesitas</span>
+                            <textarea placeholder="Escribe tu mensaje aquí..."></textarea>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Enviar</button>
+                </form>
+            </div>
+
+            <div class="image-panel" aria-label="Trabajador instalando paneles solares">
+                <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=80" alt="Trabajador instalando paneles solares">
+            </div>
+        </section>
+    </main>
 </body>
 </html>
