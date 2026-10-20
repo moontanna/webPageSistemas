@@ -267,22 +267,35 @@
             box-shadow: 0 12px 22px rgba(13, 120, 74, 0.35);
         }
 
+        /* ===== Sección ¿Quiénes somos? ===== */
         .top-intro {
             margin-top: 34px;
             display: grid;
-            grid-template-columns: 1.3fr 1fr;
+            grid-template-columns: minmax(260px, 0.75fr) 1.5fr;
             gap: 26px;
-            align-items: center;
+            align-items: stretch;
+        }
+
+        .about-image {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 28px rgba(10, 18, 22, 0.12);
+            min-height: 260px;
+            max-height: 520px;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .intro-copy {
-            font-size: 1.15rem;
+            font-size: 1.05rem;
             line-height: 1.55;
-            color: var(--page-text);
-            padding: 24px;
+            padding: 28px 32px;
+            color: #fff;
         }
-
-        .intro-copy.glass-panel { color: #fff; }
 
         .intro-copy h2 {
             font-size: clamp(2.1rem, 3vw, 3.1rem);
@@ -292,34 +305,24 @@
             font-weight: 800;
         }
 
-        .benefit-card {
-            background: #fff;
-            color: #111;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 10px 28px rgba(10, 18, 22, 0.06);
-        }
-
-        .benefit-card img {
-            width: 100%;
-            height: 210px;
-            object-fit: cover;
-        }
+        .intro-copy > p { margin: 0 0 22px; }
 
         .benefit-content {
-            padding: 22px 24px 26px;
+            padding: 20px 0 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.28);
         }
 
         .benefit-content h3 {
-            margin: 0 0 12px;
+            margin: 0 0 10px;
             font-size: 1.1rem;
             font-weight: 700;
+            color: #fff;
         }
 
         .benefit-content ul {
-            margin: 0 0 18px;
+            margin: 0 0 20px;
             padding-left: 18px;
-            color: inherit;
+            color: #fff;
             line-height: 1.8;
             font-size: 0.95rem;
         }
@@ -337,17 +340,25 @@
             cursor: pointer;
         }
 
+        /* ===== Sección Productos ===== */
         .product-lineup {
             margin-top: 72px;
+            padding: 28px 24px 32px;
+        }
+
+        .top-intro,
+        .product-lineup {
+            scroll-margin-top: 92px;
         }
 
         .product-lineup h2 {
-            display: inline-block;
+            display: block;
             margin: 0 0 24px;
+            padding: 0;
             font-size: clamp(2rem, 3vw, 2.8rem);
             letter-spacing: -0.06em;
             font-weight: 800;
-            padding: 10px 16px;
+            color: #fff;
         }
 
         .product-grid {
@@ -520,6 +531,11 @@
                 grid-template-columns: 1fr;
             }
 
+            .about-image {
+                min-height: 0;
+                height: 260px;
+            }
+
             .product-grid {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
             }
@@ -549,6 +565,8 @@
             .hero-glass { padding: 24px 18px; }
 
             .intro-copy { padding: 20px; }
+
+            .product-lineup { padding: 20px 14px 24px; }
 
             .product-grid {
                 grid-template-columns: 1fr;
@@ -634,15 +652,16 @@
         </div>
     </header>
 
-    <main class="page-shell" id="about">
-        <section class="top-intro">
+    <main class="page-shell">
+        <section class="top-intro" id="about">
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1497440001374-f26997328c1b?auto=format&fit=crop&w=900&q=80" alt="Beneficios de solar">
+            </div>
+
             <div class="intro-copy glass-panel">
                 <h2>¿Quiénes Somos?</h2>
                 <p>En SunGo ofrecemos soluciones de energía solar para hogares y negocios que buscan reducir su factura eléctrica, mejorar su independencia energética y generar un mayor valor para su propiedad.</p>
-            </div>
 
-            <div class="benefit-card">
-                <img src="https://images.unsplash.com/photo-1497440001374-f26997328c1b?auto=format&fit=crop&w=900&q=80" alt="Beneficios de solar">
                 <div class="benefit-content">
                     <h3>Beneficios</h3>
                     <ul>
@@ -655,8 +674,8 @@
             </div>
         </section>
 
-        <section class="product-lineup" id="products">
-            <h2 class="glass-panel">Productos</h2>
+        <section class="product-lineup glass-panel" id="products">
+            <h2>Productos</h2>
             <div class="product-grid">
                 <article class="product-card">
                     <div class="product-image">
