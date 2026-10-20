@@ -6,17 +6,16 @@
     <title>SunGo | Contacto</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #f3f3f3;
-            --panel: #f9f9f9;
-            --text: #111111;
-            --muted: #6f757d;
-            --line: #d7d7d7;
-            --green: #3d9b5d;
-            --green-dark: #2a7d48;
-            --teal: #0ea5b3;
+            --bg: #f4f7f3;
+            --panel: #ffffff;
+            --text: #172b25;
+            --muted: #62716b;
+            --line: #e0e7e2;
+            --green: #28734f;
+            --green-dark: #19543a;
         }
 
         * { box-sizing: border-box; }
@@ -25,7 +24,7 @@
             margin: 0;
             background: var(--bg);
             color: var(--text);
-            font-family: 'Poppins', sans-serif;
+            font-family: 'DM Sans', sans-serif;
         }
 
         a { text-decoration: none; }
@@ -58,7 +57,7 @@
             font-size: 1.1rem;
             font-weight: 800;
             letter-spacing: -0.05em;
-            color: #111;
+            color: var(--green-dark);
         }
 
         .nav {
@@ -70,16 +69,16 @@
         }
 
         .nav a {
-            color: #1f1f1f;
+            color: #3e5148;
         }
 
         .nav-button {
             padding: 0.9rem 1.4rem;
             border-radius: 10px;
-            background: #1d9db1;
+            background: var(--green);
             color: #fff !important;
             font-weight: 600;
-            box-shadow: 0 10px 20px rgba(10, 151, 170, 0.18);
+            box-shadow: 0 10px 20px rgba(40, 115, 79, 0.18);
         }
 
         .page {
@@ -119,7 +118,7 @@
             gap: 8px;
             font-size: 0.9rem;
             font-weight: 500;
-            color: #1a1a1a;
+            color: var(--text);
         }
 
         .field.full {
@@ -135,7 +134,7 @@
             border-radius: 10px;
             padding: 0.9rem 0.95rem;
             font-size: 1rem;
-            color: #1a1a1a;
+            color: var(--text);
             outline: none;
             box-shadow: inset 0 0 0 0 rgba(0,0,0,0);
         }
@@ -147,7 +146,7 @@
 
         .field input::placeholder,
         .field textarea::placeholder {
-            color: #7d7d7d;
+            color: var(--muted);
         }
 
         .btn-submit {

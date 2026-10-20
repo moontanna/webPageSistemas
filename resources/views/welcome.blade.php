@@ -637,7 +637,7 @@
     <main class="page-shell" id="about">
         <section class="top-intro">
             <div class="intro-copy glass-panel">
-                <h2>¿Quiénes Somos?</h2>
+                <h2>Sobre nosotros</h2>
                 <p>En SunGo ofrecemos soluciones de energía solar para hogares y negocios que buscan reducir su factura eléctrica, mejorar su independencia energética y generar un mayor valor para su propiedad.</p>
             </div>
 
