@@ -45,19 +45,25 @@
         }
 
         .topbar-inner {
-            max-width: 1220px;
+            width: 100%;
             margin: 0 auto;
-            padding: 18px 26px;
+            padding: 8px 26px;
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
 
         .brand {
-            font-size: 1.1rem;
-            font-weight: 800;
-            letter-spacing: -0.05em;
-            color: var(--green-dark);
+            display: flex;
+            flex-shrink: 0;
+            align-items: center;
+        }
+
+        .brand img {
+            display: block;
+            width: 58px;
+            height: 64px;
+            object-fit: contain;
         }
 
         .nav {
@@ -196,7 +202,7 @@
             }
 
             .topbar-inner {
-                padding: 16px 18px;
+                padding: 8px 18px;
             }
 
             .form-grid {
@@ -212,7 +218,9 @@
 <body>
     <header class="topbar">
         <div class="topbar-inner">
-            <div class="brand">SunGO</div>
+            <a class="brand" href="{{ route('vista_inicio') }}" aria-label="SunGo, inicio">
+                <img src="{{ asset('Imagenes/logo-sungo.png') }}" alt="SunGo Energía Solar">
+            </a>
             <nav class="nav" aria-label="Navegación principal">
                 <a href="{{ route('vista_inicio') }}">Inicio</a>
                 <a href="{{ route('vista_inicio') }}#services">Servicios</a>

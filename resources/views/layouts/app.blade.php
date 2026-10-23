@@ -35,24 +35,49 @@
   }
 
   .sun-header {
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 50;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 26px 56px 18px;
+    width: 100%;
+    padding: 8px 56px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(10, 19, 26, 0.18);
-    backdrop-filter: blur(6px);
+    background: rgba(10, 19, 26, 0.88);
+    backdrop-filter: blur(10px);
   }
 
   .brand {
-    font-size: 1.1rem;
-    font-weight: 700;
-    letter-spacing: -0.04em;
-    color: #fff;
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+  }
+
+  .brand img {
+    display: block;
+    width: 58px;
+    height: 64px;
+    object-fit: contain;
+  }
+
+  .legacy-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    width: 100%;
+  }
+
+  .legacy-navbar .container-fluid {
+    gap: 20px;
+  }
+
+  .legacy-navbar .navbar-brand img {
+    display: block;
+    width: 51px;
+    height: 56px;
+    object-fit: contain;
   }
 
   .sun-nav {
@@ -217,7 +242,7 @@
 
   @media (max-width: 900px) {
     .sun-header {
-      padding: 22px 20px 0;
+      padding: 8px 20px;
     }
 
     .sun-nav {
@@ -243,8 +268,11 @@
     <p>Soluciones de energía solar para hogares y empresas</p>
   </div>
 
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark legacy-navbar">
     <div class="container-fluid">
+      <a class="navbar-brand" href="/" aria-label="SunGo, inicio">
+        <img src="{{ asset('Imagenes/logo-sungo.png') }}" alt="SunGo Energía Solar">
+      </a>
       <ul class="navbar-nav">
         <li class="nav-item"><a class="nav-link active" href="/">Inicio</a></li>
         <li class="nav-item"><a class="nav-link" href="#">@yield('link1', 'Servicios')</a></li>
@@ -256,7 +284,9 @@
 @else
   <section class="sun-hero">
     <header class="sun-header">
-      <div class="brand">SunGO</div>
+      <a class="brand" href="/" aria-label="SunGo, inicio">
+        <img src="{{ asset('Imagenes/logo-sungo.png') }}" alt="SunGo Energía Solar">
+      </a>
       <nav class="sun-nav" aria-label="Navegación principal">
         <a href="/">Inicio</a>
         <a href="#">Servicios</a>
