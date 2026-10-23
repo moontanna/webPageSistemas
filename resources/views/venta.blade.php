@@ -121,18 +121,21 @@
 
         .store-header {
             font-family: 'Poppins', sans-serif;
-            position: sticky;
+            position: fixed;
             top: 0;
-            z-index: 5;
+            left: 0;
+            right: 0;
+            z-index: 50;
             border-bottom: 1px solid var(--line);
             background: rgba(255, 255, 255, 0.96);
             backdrop-filter: blur(12px);
         }
 
         .header-inner {
-            width: min(1280px, 100% - 40px);
+            width: 100%;
             min-height: 72px;
             margin: 0 auto;
+            padding: 0 26px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -140,9 +143,16 @@
         }
 
         .brand {
-            color: var(--green-dark);
-            font-size: 1.25rem;
-            font-weight: 800;
+            display: flex;
+            flex-shrink: 0;
+            align-items: center;
+        }
+
+        .brand img {
+            display: block;
+            width: 58px;
+            height: 64px;
+            object-fit: contain;
         }
 
         .header-nav {
@@ -201,7 +211,7 @@
         main {
             width: min(1280px, 100% - 40px);
             margin: 0 auto;
-            padding: 54px 0 72px;
+            padding: 126px 0 72px;
         }
 
         .hero-glass {
@@ -403,12 +413,20 @@
         }
 
         @media (max-width: 600px) {
-            .header-inner,
-            main { width: min(100% - 28px, 520px); }
+            .header-inner {
+                min-height: 64px;
+                padding: 0 14px;
+            }
 
-            .header-inner { min-height: 64px; }
+            .brand img {
+                width: 49px;
+                height: 54px;
+            }
 
-            main { padding-top: 38px; }
+            main {
+                width: min(100% - 28px, 520px);
+                padding-top: 108px;
+            }
 
             .hero-glass { padding: 24px 18px; }
 
@@ -455,7 +473,9 @@
 
     <header class="store-header">
         <div class="header-inner">
-            <a class="brand" href="/">SunGO</a>
+            <a class="brand" href="/" aria-label="SunGo, inicio">
+                <img src="{{ asset('Imagenes/logo-sungo.png') }}" alt="SunGo Energía Solar">
+            </a>
             <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
                 <span></span>
             </button>

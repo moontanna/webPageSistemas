@@ -130,10 +130,9 @@
             left: 0;
             right: 0;
             z-index: 1000;
-            max-width: 1280px;
+            width: 100%;
             min-height: 72px;
-            margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 26px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -144,9 +143,16 @@
         }
 
         .logo {
-            font-weight: 800;
-            font-size: 1.25rem;
-            color: #19543a;
+            display: flex;
+            flex-shrink: 0;
+            align-items: center;
+        }
+
+        .logo img {
+            display: block;
+            width: 58px;
+            height: 64px;
+            object-fit: contain;
         }
 
         .nav {
@@ -577,7 +583,12 @@
             }
 
             .topbar {
-                padding: 12px 18px;
+                padding: 8px 18px;
+            }
+
+            .logo img {
+                width: 49px;
+                height: 54px;
             }
 
             .nav-toggle {
@@ -630,7 +641,9 @@
 
     <header>
         <div class="topbar">
-            <div class="logo">SunGO</div>
+            <a class="logo" href="/" aria-label="SunGo, inicio">
+                <img src="{{ asset('Imagenes/logo-sungo.png') }}" alt="SunGo Energía Solar">
+            </a>
             <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
                 <span></span>
             </button>
