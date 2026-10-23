@@ -207,6 +207,18 @@
                 padding-top: 90px;
             }
         }
+        .contact-left .contact-info {
+    display: block;
+    width: 100%;
+    max-width: 350px;
+    margin: 0 0 20px;
+    padding: 14px 18px;
+    background: #ffffff;
+    border: 1px solid #dfe3e8;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
     </style>
 </head>
 <body>
@@ -226,7 +238,7 @@
         <section class="contact-wrap">
             <div class="contact-left">
                 <h1 class="contact-title">Solicita tu cotización</h1>
-
+                
                 <form>
                     <div class="form-grid">
                         <label class="field">
