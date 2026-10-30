@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TiendaController;
+use App\Models\Producto;
 
 Route::get('/', function () {
     return view('welcome');
@@ -12,19 +14,18 @@ Route::get('/contact', function () {
     return view('contact', ['nombre' => $nombre, 'Especialidad' => 'Paneles Solares']);
 })->name('contact');
 
-Route::get('/ventas', function () {
-    return view('venta', [
-        'descripcion_about' => 'Productos solares para hogares y negocios.',
-        'actividad' => 'Tienda de productos solares',
-        'texto_ejemplo' => 'Consulta los productos disponibles.',
-    ]);
-})->name('ventas');
+  Route::get('/ventas', [TiendaController::class, 'index'])
+    ->name('ventas');
 
 Route::get('/empresa', function () {
     return redirect('/');
 })->name('empresa');
 
+Route::get('/tienda', [TiendaController::class, 'index'])
+    ->name('tienda');
 
-
+Route::get('/calculadora', function () {
+    return view('calculadora');
+});
 
 

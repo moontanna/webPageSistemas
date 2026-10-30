@@ -209,9 +209,12 @@
         }
 
         main {
-            width: min(1280px, 100% - 40px);
-            margin: 0 auto;
-            padding: 126px 0 72px;
+    
+        width: 95%;
+        max-width: 1600px;
+        margin: 0 auto;
+        padding: 126px 0 72px;
+        box-sizing: border-box;
         }
 
         .hero-glass {
@@ -244,8 +247,10 @@
 
         /* Contenedor transparente que envuelve "4 productos" + tarjetas */
         .catalog-panel {
+            width: 100%;
             margin: 34px 0 0;
-            padding: 22px 24px 26px;
+            padding: 22px 16px 26px;
+            box-sizing: border-box;
         }
 
         .catalog-toolbar {
@@ -261,8 +266,9 @@
 
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
-            gap: 16px;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+            width: 100%;
         }
 
         .product-card {
@@ -502,64 +508,60 @@
                 <span>Precios en MXN</span>
             </div>
 
-            <section class="product-grid" aria-label="Productos de paneles solares">
-                <article class="product-card">
-                    <div class="product-image">
-                        <img src="https://cdn.homedepot.com.mx/productos/140576/140576-z.jpg" alt="Sistema fotovoltaico Home Depot SKU 140576" loading="lazy" decoding="async">
-                    </div>
-                    <div class="product-details">
-                        <p class="sku">SKU 140576</p>
-                        <h2>ERA sistema fotovoltaico con 1 panel solar de 270 W</h2>
-                        <p class="description">Sistema fotovoltaico compacto con un panel solar de 270 W. Revisa en la ficha de tienda los componentes incluidos y requisitos de instalación.</p>
-                        <div class="price-label">Precio de referencia</div>
-                        <p class="price">$13,249.00 <span>MXN</span></p>
-                        <a class="product-action" href="{{ route('contact') }}">Consultar producto</a>
-                    </div>
-                </article>
+<div class="catalog-toolbar">
+    <span>{{ $productos->count() }} productos</span>
+    <span>Precios en MXN</span>
+</div>
 
-                <article class="product-card">
-                    <div class="product-image">
-                        <img src="https://cdn.homedepot.com.mx/productos/152751/152751-za4.jpg" alt="Sistema fotovoltaico Home Depot SKU 152751" loading="lazy" decoding="async">
-                    </div>
-                    <div class="product-details">
-                        <p class="sku">SKU 152751</p>
-                        <h2>ERA sistema fotovoltaico con 2 paneles solares de 270 W</h2>
-                        <p class="description">Sistema con dos paneles solares de 270 W para ampliar la generación fotovoltaica en una instalación compatible.</p>
-                        <div class="price-label">Precio de referencia</div>
-                        <p class="price">$22,499.00 <span>MXN</span></p>
-                        <a class="product-action" href="{{ route('contact') }}">Consultar producto</a>
-                    </div>
-                </article>
+<section class="product-grid" aria-label="Productos de paneles solares">
 
-                <article class="product-card">
-                    <div class="product-image">
-                        <img src="https://cdn.homedepot.com.mx/productos/226333/226333-za4.jpg" alt="Panel solar Ring USB-C Home Depot SKU 226333" loading="lazy" decoding="async">
-                    </div>
-                    <div class="product-details">
-                        <p class="sku">SKU 226333</p>
-                        <h2>Ring panel solar pequeño USB-C, negro</h2>
-                        <p class="description">Panel solar compacto con conexión USB-C, pensado para alimentar dispositivos compatibles en exteriores.</p>
-                        <div class="price-label">Precio de referencia</div>
-                        <p class="price">$1,035.00 <span>MXN</span></p>
-                        <a class="product-action" href="{{ route('contact') }}">Consultar producto</a>
-                    </div>
-                </article>
+    @forelse ($productos as $producto)
+        <article class="product-card">
 
-                <article class="product-card">
-                    <div class="product-image">
-                        <img src="https://cdn.homedepot.com.mx/productos/226563/226563-za1.jpg" alt="Kit fotovoltaico Home Depot SKU 226563" loading="lazy" decoding="async">
-                    </div>
-                    <div class="product-details">
-                        <p class="sku">SKU 226563</p>
-                        <h2>Kit fotovoltaico de 4400 W con 8 paneles monocristalinos</h2>
-                        <p class="description">Kit fotovoltaico de ocho paneles monocristalinos con potencia indicada de 4400 W. Confirma el alcance del kit y la instalación requerida.</p>
-                        <div class="price-label">Precio de referencia</div>
-                        <p class="price">$79,999.00 <span>MXN</span></p>
-                        <a class="product-action" href="{{ route('contact') }}">Consultar producto</a>
-                    </div>
-                </article>
-            </section>
-        </div>
+        <div class="product-image">
+
+            @if (!empty($producto->id_imagen))
+
+                 <img
+        src="{{ asset($producto->ruta) }}"
+        alt="{{ $producto->nombre }}"
+        >
+    @endif
+
+</div>
+     
+             
+            <div class="product-details">
+                <p class="sku">
+                    Producto #{{ $producto->id}}
+                </p>
+
+                <h2>{{ $producto->nombre }}</h2>
+
+                <p class="description">
+                    {{ $producto->descripcion }}
+                </p>
+
+                <div class="price-label">Precio de referencia</div>
+
+                <p class="price">
+                    Precio pendiente de configurar
+                    <span>MXN</span>
+                </p>
+
+                <a class="product-action"
+                   href="{{ route('contact') }}">
+                    Consultar producto
+                </a>
+            </div>
+
+        </article>
+    @empty
+        <p>Aún no hay productos registrados.</p>
+    @endforelse
+
+</section>
+
 
         <p class="price-note glass-panel">La energia del sol impulsa tu futuro</p>
     </main>
