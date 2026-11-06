@@ -19,6 +19,8 @@
             --footer: #0e0e0e;
             --card-bg: #ffffff;
             --border: #dfe3e8;
+            --content-width: 1220px;
+            --panel-background: rgba(10, 20, 28, 0.42);
         }
 
         * { box-sizing: border-box; }
@@ -118,9 +120,9 @@
         }
 
         .page-shell {
-            max-width: 1220px;
+            width: min(calc(100% - 36px), var(--content-width));
             margin: 0 auto;
-            padding: 0 18px 60px;
+            padding: 0 0 60px;
         }
 
         .topbar {
@@ -220,7 +222,7 @@
         }
 
         .hero-copy {
-            max-width: 1220px;
+            width: min(calc(100% - 40px), var(--content-width));
             margin: 0 auto;
             min-height: 470px;
             display: flex;
@@ -234,7 +236,7 @@
         .glass-panel {
             border: 1px solid rgba(255, 255, 255, 0.28);
             border-radius: 14px;
-            background: rgba(10, 20, 28, 0.42);
+            background: var(--panel-background);
             color: #fff;
             box-shadow: 0 16px 36px rgba(5, 14, 20, 0.14);
             backdrop-filter: blur(14px);
@@ -242,7 +244,7 @@
         }
 
         .hero-glass {
-            width: min(850px, 100%);
+            width: min(1000px, 100%);
             padding: 32px 36px;
         }
 
@@ -250,7 +252,7 @@
             margin: 0;
             font-size: clamp(2.5rem, 5vw, 5rem);
             line-height: 0.98;
-            letter-spacing: -0.06em;
+            letter-spacing: -0.02em;
             font-weight: 800;
         }
 
@@ -305,7 +307,7 @@
         .intro-copy h2 {
             font-size: clamp(2.1rem, 3vw, 3.1rem);
             margin: 0 0 16px;
-            letter-spacing: -0.06em;
+            letter-spacing: -0.02em;
             line-height: 1.08;
             font-weight: 800;
         }
@@ -345,126 +347,8 @@
             cursor: pointer;
         }
 
-        /* ===== Sección Productos ===== */
-        .product-lineup {
-            margin-top: 72px;
-            padding: 28px 24px 32px;
-        }
-
-        .top-intro,
-        .product-lineup {
+        .top-intro {
             scroll-margin-top: 92px;
-        }
-
-        .product-lineup h2 {
-            display: block;
-            margin: 0 0 24px;
-            padding: 0;
-            font-size: clamp(2rem, 3vw, 2.8rem);
-            letter-spacing: -0.06em;
-            font-weight: 800;
-            color: #fff;
-        }
-
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
-            gap: 12px;
-        }
-
-        .product-shop-link {
-            margin-top: 28px;
-            text-align: center;
-        }
-
-        .product-card {
-            display: flex;
-            min-width: 0;
-            flex-direction: column;
-            padding: 12px 12px 20px;
-            border: 1px solid #dedede;
-            border-radius: 4px;
-            background: #fff;
-            color: #202020;
-            box-shadow: 0 2px 9px rgba(15, 23, 42, 0.08);
-            transition: transform 180ms ease, box-shadow 180ms ease;
-        }
-
-        .product-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(15, 23, 42, 0.14);
-        }
-
-        .product-image {
-            height: 270px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            margin-bottom: 16px;
-            border-radius: 10px;
-            background: #fff;
-        }
-
-        .product-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .product-card h3 {
-            min-height: 3.6em;
-            margin: 0 0 12px;
-            font-size: 0.92rem;
-            font-weight: 500;
-            line-height: 1.2;
-            text-transform: uppercase;
-        }
-
-        .product-rating {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 14px;
-            color: #68727a;
-            font-size: 0.88rem;
-        }
-
-        .rating-stars {
-            color: #f26516;
-            font-size: 1.18rem;
-            letter-spacing: 0.04em;
-            white-space: nowrap;
-        }
-
-        .rating-stars .empty {
-            color: #d8d8d8;
-        }
-
-        .product-sku {
-            color: #78818a;
-            font-size: 0.8rem;
-        }
-
-        .product-price {
-            display: flex;
-            align-items: flex-start;
-            gap: 2px;
-            margin-top: auto;
-            padding-top: 28px;
-            color: #202020;
-            font-size: 1.55rem;
-            line-height: 1;
-        }
-
-        .product-price strong {
-            font-weight: 700;
-        }
-
-        .product-price sup {
-            margin-top: 2px;
-            font-size: 0.62rem;
-            font-weight: 700;
         }
 
         footer {
@@ -541,10 +425,6 @@
                 height: 260px;
             }
 
-            .product-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-
             .footer-inner {
                 flex-direction: column;
                 text-align: center;
@@ -570,16 +450,6 @@
             .hero-glass { padding: 24px 18px; }
 
             .intro-copy { padding: 20px; }
-
-            .product-lineup { padding: 20px 14px 24px; }
-
-            .product-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .product-image {
-                height: 250px;
-            }
 
             .topbar {
                 padding: 8px 18px;
@@ -648,9 +518,10 @@
             </button>
             <nav class="nav" id="mainNav" aria-label="Menú principal">
                 <a href="#">Inicio</a>
-                <a href="#products">Productos</a>
-                <a href="{{ route('ventas') }}">Tienda</a>
                 <a href="#about">Nosotros</a>
+                <a href="{{ route('ventas') }}">Tienda</a>
+                <a href="{{ route('calculadora') }}">Calculadora</a>
+
                 <a href="/contact" class="nav-button">Contáctanos</a>
             </nav>
         </div>
@@ -659,7 +530,7 @@
             <div class="hero-glass glass-panel">
                 <h1>Empieza tu vida sostenible</h1>
                 <p>Aprovecha el sol de Yucatán con SunGo.</p>
-                <a href="/contact" class="cta">Conócenos</a>
+                <a href="{{ route('calculadora') }}" class="cta">¡Prueba nuestra calculadora!</a>
             </div>
         </div>
     </header>
@@ -681,65 +552,8 @@
                         <li>Energía limpia y renovable.</li>
                         <li>Mayor valor en tu propiedad.</li>
                     </ul>
-                    <a href="{{ route('ventas') }}" class="btn-primary">Ver productos</a>
+                    <a href="{{ route('ventas') }}" class="btn-primary">Visitar tienda</a>
                 </div>
-            </div>
-        </section>
-
-        <section class="product-lineup glass-panel" id="products">
-            <h2>Productos</h2>
-            <div class="product-grid">
-                <article class="product-card">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1497440001374-f26997328c1b?auto=format&fit=crop&w=700&q=85" alt="Panel solar fotovoltaico">
-                    </div>
-                    <h3>ERA sistema fotovoltaico 1 panel solar 270 W</h3>
-                    <div class="product-rating">
-                        <span class="rating-stars" role="img" aria-label="Calificación: 2.8 de 5 estrellas">★★★<span class="empty">★★</span></span>
-                        <span>2.8 (12)</span>
-                    </div>
-                    <div class="product-sku">SKU 140576</div>
-                    <div class="product-price"><span>$</span><strong>13,249</strong><sup>00</sup></div>
-                </article>
-                <article class="product-card">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=700&q=85" alt="Dos paneles solares fotovoltaicos">
-                    </div>
-                    <h3>ERA sistema fotovoltaico 2 paneles solares 270 W</h3>
-                    <div class="product-rating">
-                        <span class="rating-stars" role="img" aria-label="Calificación: 3.8 de 5 estrellas">★★★★<span class="empty">★</span></span>
-                        <span>3.8 (10)</span>
-                    </div>
-                    <div class="product-sku">SKU 152751</div>
-                    <div class="product-price"><span>$</span><strong>22,499</strong><sup>00</sup></div>
-                </article>
-                <article class="product-card">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=700&q=85" alt="Panel solar portátil pequeño">
-                    </div>
-                    <h3>Ring panel solar pequeño USB-C - negro</h3>
-                    <div class="product-rating">
-                        <span class="rating-stars" role="img" aria-label="Calificación: 4.1 de 5 estrellas">★★★★<span class="empty">★</span></span>
-                        <span>4.1 (39)</span>
-                    </div>
-                    <div class="product-sku">SKU 226333</div>
-                    <div class="product-price"><span>$</span><strong>1,035</strong><sup>00</sup></div>
-                </article>
-                <article class="product-card">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=700&q=85" alt="Kit de paneles solares fotovoltaicos">
-                    </div>
-                    <h3>Kit fotovoltaico de 4400 W con 8 paneles solares monocristalinos</h3>
-                    <div class="product-rating">
-                        <span class="rating-stars" role="img" aria-label="Sin calificaciones"> <span class="empty">★★★★★</span></span>
-                        <span>0 (0)</span>
-                    </div>
-                    <div class="product-sku">SKU 226563</div>
-                    <div class="product-price"><span>$</span><strong>79,999</strong><sup>00</sup></div>
-                </article>
-            </div>
-            <div class="product-shop-link">
-                <a href="{{ route('ventas') }}" class="btn-primary">Ir a la tienda</a>
             </div>
         </section>
     </main>

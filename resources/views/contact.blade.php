@@ -6,7 +6,7 @@
     <title>SunGo | Contacto</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg: #f4f7f3;
@@ -16,6 +16,8 @@
             --line: #e0e7e2;
             --green: #28734f;
             --green-dark: #19543a;
+            --content-width: 1220px;
+            --panel-background: rgba(10, 20, 28, 0.42);
         }
 
         * { box-sizing: border-box; }
@@ -24,7 +26,7 @@
             margin: 0;
             background: var(--bg);
             color: var(--text);
-            font-family: 'DM Sans', sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
 
         a { text-decoration: none; }
@@ -88,26 +90,33 @@
         }
 
         .page {
-            max-width: 1220px;
+            width: min(calc(100% - 40px), var(--content-width));
             margin: 0 auto;
-            padding: 104px 20px 60px;
+            padding: 104px 0 60px;
         }
 
         .contact-wrap {
             display: grid;
-            grid-template-columns: 1.08fr 0.92fr;
-            gap: 56px;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
             align-items: start;
         }
 
         .contact-left {
-            padding-top: 8px;
+            padding: 32px;
+            border: 1px solid rgba(255, 255, 255, 0.28);
+            border-radius: 14px;
+            background: var(--panel-background);
+            color: #fff;
+            box-shadow: 0 16px 36px rgba(5, 14, 20, 0.14);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
         }
 
         .contact-title {
             font-size: clamp(2.3rem, 3vw, 3.6rem);
             line-height: 1.1;
-            letter-spacing: -0.06em;
+            letter-spacing: -0.02em;
             margin: 0 0 28px;
             font-weight: 800;
         }
@@ -124,7 +133,7 @@
             gap: 8px;
             font-size: 0.9rem;
             font-weight: 500;
-            color: var(--text);
+            color: #fff;
         }
 
         .field.full {
@@ -135,8 +144,8 @@
         .field select,
         .field textarea {
             width: 100%;
-            background: rgba(255,255,255,0.65);
-            border: 1px solid var(--line);
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.5);
             border-radius: 10px;
             padding: 0.9rem 0.95rem;
             font-size: 1rem;
@@ -172,11 +181,12 @@
         .image-panel {
             width: 100%;
             height: 100%;
-            min-height: 520px;
+            min-height: 100%;
             border-radius: 18px;
             overflow: hidden;
             box-shadow: 0 18px 36px rgba(15, 23, 42, 0.1);
-            background: #dfeaf8;
+            background: var(--panel-background);
+            border: 1px solid rgba(255, 255, 255, 0.28);
         }
 
         .image-panel img {
@@ -219,11 +229,75 @@
     max-width: 350px;
     margin: 0 0 20px;
     padding: 14px 18px;
-    background: #ffffff;
-    border: 1px solid #dfe3e8;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.28);
     border-radius: 12px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    box-shadow: none;
 }
+
+        footer {
+            margin-top: 80px;
+            background: #0e0e0e;
+            color: #f2f2f2;
+            padding: 34px 0 26px;
+        }
+
+        .footer-inner {
+            max-width: 1220px;
+            margin: 0 auto;
+            padding: 0 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .footer-brand {
+            display: grid;
+            gap: 14px;
+        }
+
+        .footer-brand p {
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #ebebeb;
+        }
+
+        .socials {
+            display: flex;
+            gap: 10px;
+            font-size: 1.1rem;
+            color: #fff;
+        }
+
+        .socials span {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.08);
+        }
+
+        .footer-contact {
+            text-align: right;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: #d7d7d7;
+        }
+
+        @media (max-width: 900px) {
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-contact {
+                text-align: center;
+            }
+        }
 
     </style>
 </head>
@@ -235,7 +309,8 @@
             </a>
             <nav class="nav" aria-label="Navegación principal">
                 <a href="{{ route('vista_inicio') }}">Inicio</a>
-                <a href="{{ route('vista_inicio') }}#services">Servicios</a>
+                <a href="{{ route('tienda') }}">Tienda</a>
+                <a href="{{ route('calculadora') }}">Calculadora</a>
                 <a href="{{ route('vista_inicio') }}#about">Nosotros</a>
                 <a href="{{ route('contact') }}" class="nav-button">Contáctanos</a>
             </nav>
@@ -295,5 +370,25 @@
             </div>
         </section>
     </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <p>La energía del sol impulsa tu futuro</p>
+                <div class="socials" aria-label="Redes sociales">
+                    <span>f</span>
+                    <span>in</span>
+                    <span>◎</span>
+                    <span>◌</span>
+                </div>
+            </div>
+
+            <div class="footer-contact">
+                Mérida, Yucatán.<br>
+                WhatsApp: (999) 123-4567<br>
+                Correo: atencion@sun.go.mx
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

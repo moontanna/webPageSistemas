@@ -7,7 +7,7 @@
     <title>Tienda solar | SunGo</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
             --ink: #172b25;
@@ -18,6 +18,8 @@
             --surface: #ffffff;
             --page: #f4f7f3;
             --page-text: #132532;
+            --content-width: 1220px;
+            --panel-background: rgba(10, 20, 28, 0.42);
         }
 
         * { box-sizing: border-box; }
@@ -34,7 +36,7 @@
                 rgba(19, 32, 89, 0.96) 78%,
                 rgba(5, 15, 36, 1) 100%);
             color: var(--ink);
-            font-family: 'DM Sans', sans-serif;
+            font-family: 'Poppins', sans-serif;
             transition: background 0.8s ease;
         }
 
@@ -109,7 +111,7 @@
         .glass-panel {
             border: 1px solid rgba(255, 255, 255, 0.28);
             border-radius: 14px;
-            background: rgba(10, 20, 28, 0.42);
+            background: var(--panel-background);
             color: #fff;
             box-shadow: 0 16px 36px rgba(5, 14, 20, 0.14);
             backdrop-filter: blur(14px);
@@ -209,16 +211,16 @@
         }
 
         main {
-    
-        width: 95%;
-        max-width: 1600px;
-        margin: 0 auto;
-        padding: 126px 0 72px;
-        box-sizing: border-box;
+            width: min(calc(100% - 36px), var(--content-width));
+            margin: 0 auto;
+            padding: 126px 0 72px;
+            box-sizing: border-box;
         }
 
         .hero-glass {
-            max-width: 820px;
+            width: min(100%, 850px);
+            max-width: 850px;
+            margin: 0 auto;
             padding: 30px 34px;
         }
 
@@ -227,7 +229,7 @@
             color: #8fe0ae;
             font-size: 0.78rem;
             font-weight: 800;
-            letter-spacing: 0.12em;
+            letter-spacing: 0.08em;
             text-transform: uppercase;
         }
 
@@ -318,6 +320,7 @@
             font-size: 1rem;
             font-weight: 700;
             line-height: 1.35;
+            letter-spacing: -0.01em;
         }
 
         .description {
@@ -325,6 +328,7 @@
             color: var(--muted);
             font-size: 0.88rem;
             line-height: 1.55;
+            letter-spacing: 0;
         }
 
         .price-label {
@@ -333,6 +337,7 @@
             font-size: 0.75rem;
             font-weight: 600;
             text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
         .price {
@@ -379,12 +384,57 @@
             line-height: 1.5;
         }
 
-        .store-footer {
-            padding: 24px 20px;
-            background: #173b2c;
-            color: #eaf2ed;
-            text-align: center;
-            font-size: 0.9rem;
+        footer {
+            margin-top: 80px;
+            background: #0e0e0e;
+            color: #f2f2f2;
+            padding: 34px 0 26px;
+        }
+
+        .footer-inner {
+            max-width: 1220px;
+            margin: 0 auto;
+            padding: 0 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .footer-brand {
+            display: grid;
+            gap: 14px;
+        }
+
+        .footer-brand p {
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #ebebeb;
+        }
+
+        .socials {
+            display: flex;
+            gap: 10px;
+            font-size: 1.1rem;
+            color: #fff;
+        }
+
+        .socials span {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.08);
+        }
+
+        .footer-contact {
+            text-align: right;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: #d7d7d7;
         }
 
         @media (max-width: 980px) {
@@ -487,8 +537,8 @@
             </button>
             <nav class="header-nav" id="mainNav" aria-label="Navegación principal">
                 <a href="/">Inicio</a>
-                <a href="/#products">Productos</a>
                 <a href="/ventas" aria-current="page">Tienda</a>
+                <a href="{{ route('calculadora') }}">Calculadora</a>
                 <a href="/#about">Nosotros</a>
                 <a class="contact-link" href="{{ route('contact') }}">Contactar</a>
             </nav>
@@ -566,7 +616,25 @@
         <p class="price-note glass-panel">La energia del sol impulsa tu futuro</p>
     </main>
 
-    <footer class="store-footer">SunGO · Energía solar para tu hogar y negocio</footer>
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <p>La energía del sol impulsa tu futuro</p>
+                <div class="socials" aria-label="Redes sociales">
+                    <span>f</span>
+                    <span>in</span>
+                    <span>◎</span>
+                    <span>◌</span>
+                </div>
+            </div>
+
+            <div class="footer-contact">
+                Mérida, Yucatán.<br>
+                WhatsApp: (999) 123-4567<br>
+                Correo: atencion@sun.go.mx
+            </div>
+        </div>
+    </footer>
 
     <script>
         function cambiarCielo() {

@@ -7,7 +7,7 @@
 <title>SunGo | Calculadora solar</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
  :root {
             --bg: #f2f2f2;
@@ -20,6 +20,8 @@
             --footer: #0e0e0e;
             --card-bg: #ffffff;
             --border: #dfe3e8;
+            --content-width: 1220px;
+            --panel-background: rgba(10, 20, 28, 0.42);
         }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -48,20 +50,25 @@ header {
 header h1 { color: #b9ef75; margin: 0; }
 
 main {
-    max-width: 760px;
+    width: min(calc(100% - 40px), var(--content-width));
     margin: 35px auto;
-    padding: 0 18px;
+    padding: 0;
 }
 
-.card {
-    background: white;
-    padding: 26px;
+.calculadora-wrap {
+    width: min(100%, 850px);
+    margin: 0 auto;
+    padding: 32px 36px;
+    border: 1px solid rgba(255, 255, 255, 0.28);
     border-radius: 15px;
-    box-shadow: 0 5px 20px #174c3510;
-    margin-bottom: 20px;
+    background: var(--panel-background);
+    color: #fff;
+    box-shadow: 0 16px 36px rgba(5, 14, 20, 0.14);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
 }
 
-h2 { color: #216747; }
+h2 { color: #b9ef75; }
 
 label {
     display: block;
@@ -72,7 +79,7 @@ label {
 input, select {
     width: 100%;
     padding: 13px;
-    border: 1px solid #cbd9ce;
+    border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 8px;
     font-size: 16px;
 }
@@ -92,19 +99,21 @@ button {
 
 .resultado {
     display: none;
-    background: #eff8f0;
+    background: rgba(255, 255, 255, 0.12);
     padding: 20px;
     border-radius: 12px;
     margin-top: 22px;
 }
 
 .resultado strong {
-    color: #216747;
+    color: #d9ffee;
     font-size: 25px;
 }
 
 .nota {
-    color: #607064;
+    max-width: 850px;
+    margin: 18px auto 0;
+    color: rgba(255, 255, 255, 0.82);
     font-size: 13px;
     line-height: 1.6;
 }
@@ -303,7 +312,7 @@ button {
         .glass-panel {
             border: 1px solid rgba(255, 255, 255, 0.28);
             border-radius: 14px;
-            background: rgba(10, 20, 28, 0.42);
+            background: var(--panel-background);
             color: #fff;
             box-shadow: 0 16px 36px rgba(5, 14, 20, 0.14);
             backdrop-filter: blur(14px);
@@ -319,7 +328,7 @@ button {
             margin: 0;
             font-size: clamp(2.5rem, 5vw, 5rem);
             line-height: 0.98;
-            letter-spacing: -0.06em;
+            letter-spacing: -0.02em;
             font-weight: 800;
         }
 
@@ -374,7 +383,7 @@ button {
         .intro-copy h2 {
             font-size: clamp(2.1rem, 3vw, 3.1rem);
             margin: 0 0 16px;
-            letter-spacing: -0.06em;
+            letter-spacing: -0.02em;
             line-height: 1.08;
             font-weight: 800;
         }
@@ -430,7 +439,7 @@ button {
             margin: 0 0 24px;
             padding: 0;
             font-size: clamp(2rem, 3vw, 2.8rem);
-            letter-spacing: -0.06em;
+            letter-spacing: -0.02em;
             font-weight: 800;
             color: #fff;
         }
@@ -502,7 +511,7 @@ button {
         .rating-stars {
             color: #f26516;
             font-size: 1.18rem;
-            letter-spacing: 0.04em;
+            letter-spacing: 0.02em;
             white-space: nowrap;
         }
 
@@ -718,8 +727,8 @@ button {
             </button>
             <nav class="nav" id="mainNav" aria-label="Menú principal">
                 <a href="#">Inicio</a>
-                <a href="#products">Productos</a>
                 <a href="{{ route('ventas') }}">Tienda</a>
+                <a href="{{ route('calculadora') }}">Calculadora</a>
                 <a href="#about">Nosotros</a>
                 <a href="/contact" class="nav-button">Contáctanos</a>
             </nav>
@@ -788,12 +797,27 @@ button {
         </div>
     </section>
 
-    <p class="nota">
-        Introduce únicamente el consumo en kWh y la duración del
-        periodo. No necesitas escribir tu nombre, dirección,
-        número de servicio ni otros datos personales del recibo.
-    </p>
 </main>
+
+<footer>
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <p>La energía del sol impulsa tu futuro</p>
+            <div class="socials" aria-label="Redes sociales">
+                <span>f</span>
+                <span>in</span>
+                <span>◎</span>
+                <span>◌</span>
+            </div>
+        </div>
+
+        <div class="footer-contact">
+            Mérida, Yucatán.<br>
+            WhatsApp: (999) 123-4567<br>
+            Correo: atencion@sun.go.mx
+        </div>
+    </div>
+</footer>
 
 <script>
 function calcular() {
