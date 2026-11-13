@@ -151,8 +151,8 @@
 
         .logo img {
             display: block;
-            width: 58px;
-            height: 64px;
+            width: 74px;
+            height: 82px;
             object-fit: contain;
         }
 

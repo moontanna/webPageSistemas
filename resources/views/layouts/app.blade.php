@@ -57,8 +57,8 @@
 
   .brand img {
     display: block;
-    width: 58px;
-    height: 64px;
+    width: 74px;
+    height: 82px;
     object-fit: contain;
   }
 
@@ -75,8 +75,8 @@
 
   .legacy-navbar .navbar-brand img {
     display: block;
-    width: 51px;
-    height: 56px;
+    width: 64px;
+    height: 70px;
     object-fit: contain;
   }
 
@@ -240,6 +240,59 @@
     border-color: #1eb8c7;
   }
 
+  footer {
+    margin-top: 80px;
+    background: #0e0e0e;
+    color: #f2f2f2;
+    padding: 34px 0 26px;
+  }
+
+  .footer-inner {
+    max-width: 1220px;
+    margin: 0 auto;
+    padding: 0 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .footer-brand {
+    display: grid;
+    gap: 14px;
+  }
+
+  .footer-brand p {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #ebebeb;
+  }
+
+  .socials {
+    display: flex;
+    gap: 10px;
+    font-size: 1.1rem;
+    color: #fff;
+  }
+
+  .socials span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.08);
+  }
+
+  .footer-contact {
+    text-align: right;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #d7d7d7;
+  }
+
   @media (max-width: 900px) {
     .sun-header {
       padding: 8px 20px;
@@ -351,24 +404,25 @@
   @yield('contenido_listado')
 </div>
  
-<div class="mt-5 p-4 bg-dark text-white text-center">
-  <p>SunGo Energía Solar</p>
-  <em>@yield("Autor") · @yield("actividad")</em><br>
-  <i class="fa-brands fa-facebook"></i>
-  <i class="fa-brands fa-twitter"></i>
-  <i class="fa-brands fa-instagram"></i>
-  <i class="fa-brands fa-linkedin"></i>
-  <i class="fa-brands fa-github"></i>
-  <i class="fa-brands fa-whatsapp"></i>
-  <i class="fa-brands fa-telegram"></i>
-  <i class="fa-brands fa-youtube"></i>
-  <i class="fa-brands fa-twitch"></i>
-  <i class="fa-brands fa-discord"></i>
-  <i class="fa-brands fa-snapchat"></i>
-  <i class="fa-brands fa-pinterest"></i>
-  <i class="fa-brands fa-reddit"></i>
-  <i class="fa-brands fa-tiktok"></i>
-</div>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <p>La energía del sol impulsa tu futuro</p>
+      <div class="socials" aria-label="Redes sociales">
+        <span>f</span>
+        <span>in</span>
+        <span>◎</span>
+        <span>◌</span>
+      </div>
+    </div>
+
+    <div class="footer-contact">
+      Mérida, Yucatán.<br>
+      WhatsApp: (999) 123-4567<br>
+      Correo: atencion@sun.go.mx
+    </div>
+  </div>
+</footer>
  
 <div class="modal" tabindex="-1" id="myModal" role="dialog">
   <form id="editForm" method="POST">
