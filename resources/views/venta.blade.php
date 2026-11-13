@@ -218,8 +218,8 @@
         }
 
         .hero-glass {
-            width: min(100%, 850px);
-            max-width: 850px;
+            width: 100%;
+            max-width: none;
             margin: 0 auto;
             padding: 30px 34px;
         }
@@ -250,7 +250,8 @@
         /* Contenedor transparente que envuelve "4 productos" + tarjetas */
         .catalog-panel {
             width: 100%;
-            margin: 34px 0 0;
+            max-width: none;
+            margin: 34px auto 0;
             padding: 22px 16px 26px;
             box-sizing: border-box;
         }
