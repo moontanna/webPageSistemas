@@ -512,6 +512,30 @@
             color: #d7d7d7;
         }
 
+        .mision-vision {
+            margin-top: 26px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 26px;
+        }
+
+        .mision-vision .glass-panel {
+            padding: 28px 32px;
+            font-size: 1.05rem;
+            line-height: 1.55;
+        }
+
+        .mision-vision h2 {
+            margin: 0 0 12px;
+            font-size: clamp(1.6rem, 2.4vw, 2.2rem);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+
+        .mision-vision p {
+            margin: 0;
+        }
+
         @media (max-width: 980px) {
             .topbar {
                 flex-wrap: wrap;
@@ -525,6 +549,10 @@
             }
 
             .top-intro {
+                grid-template-columns: 1fr;
+            }
+
+            .mision-vision {
                 grid-template-columns: 1fr;
             }
 
@@ -677,6 +705,17 @@
                     </ul>
                     <a href="{{ route('ventas') }}" class="btn-primary">Visitar tienda</a>
                 </div>
+            </div>
+        </section>
+
+        <section class="mision-vision">
+            <div class="glass-panel">
+                <h2>Misión</h2>
+                <p>En SunGo, nuestra misión es ofrecer soluciones de energía solar accesibles, eficientes y de calidad, permitiendo que más personas y empresas aprovechen la energía del sol para reducir sus gastos de electricidad y contribuir al cuidado del medio ambiente.</p>
+            </div>
+            <div class="glass-panel">
+                <h2>Visión</h2>
+                <p>Ser una empresa líder en soluciones de energía solar accesible, reconocida por acercar las energías renovables a todos los hogares y negocios, impulsando un futuro más sostenible, económico y limpio para las próximas generaciones.</p>
             </div>
         </section>
 
