@@ -550,6 +550,10 @@
             letter-spacing: -0.02em;
         }
 
+        .objetivos p {
+            margin: 0 0 22px;
+        }
+
         .objetivos ol {
             margin: 0;
             padding-left: 22px;
@@ -740,13 +744,14 @@
         </section>
 
         <section class="objetivos glass-panel">
+            <h2>Objetivo general</h2>
+            <p>Facilitar el acceso a la energía solar mediante paneles solares económicos, eficientes y de calidad.</p>
+
             <h2>Objetivos específicos</h2>
             <ol>
                 <li>Ofrecer paneles solares a precios accesibles.</li>
                 <li>Promover el uso de energías limpias y renovables.</li>
-                <li>Garantizar productos de calidad y alta eficiencia.</li>
                 <li>Reducir los gastos de electricidad de nuestros clientes.</li>
-                <li>Brindar atención y asesoría personalizada.</li>
             </ol>
         </section>
 
