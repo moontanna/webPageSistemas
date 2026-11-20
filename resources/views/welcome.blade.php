@@ -536,6 +536,26 @@
             margin: 0;
         }
 
+        .objetivos {
+            margin-top: 26px;
+            padding: 28px 32px;
+            font-size: 1.05rem;
+            line-height: 1.55;
+        }
+
+        .objetivos h2 {
+            margin: 0 0 12px;
+            font-size: clamp(1.6rem, 2.4vw, 2.2rem);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+
+        .objetivos ol {
+            margin: 0;
+            padding-left: 22px;
+            line-height: 1.8;
+        }
+
         @media (max-width: 980px) {
             .topbar {
                 flex-wrap: wrap;
@@ -717,6 +737,17 @@
                 <h2>Visión</h2>
                 <p>Ser una empresa líder en soluciones de energía solar accesible, reconocida por acercar las energías renovables a todos los hogares y negocios, impulsando un futuro más sostenible, económico y limpio para las próximas generaciones.</p>
             </div>
+        </section>
+
+        <section class="objetivos glass-panel">
+            <h2>Objetivos específicos</h2>
+            <ol>
+                <li>Ofrecer paneles solares a precios accesibles.</li>
+                <li>Promover el uso de energías limpias y renovables.</li>
+                <li>Garantizar productos de calidad y alta eficiencia.</li>
+                <li>Reducir los gastos de electricidad de nuestros clientes.</li>
+                <li>Brindar atención y asesoría personalizada.</li>
+            </ol>
         </section>
 
         <section class="product-lineup glass-panel" id="products">
